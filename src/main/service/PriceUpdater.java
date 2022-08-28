@@ -26,31 +26,32 @@ public class PriceUpdater {
         List<Price> pricesToDelete = new ArrayList<>();
         while (newPriceIterator.hasNext()) {
             Price newPrice = newPriceIterator.next();
-            boolean isNeedToDelete = false;
+            boolean isNeedToRemove = false;
             resultPrices.addAll(finalPrices);
             Iterator<Price> resIterator = resultPrices.iterator();
             while (resIterator.hasNext()) {
                 Price price = resIterator.next();
                 if (newPrice.checkProductCodeAndDepart(price)) {
-                    if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.BEFORE) {
-                        isNeedToDelete = true;
+                    DatePosition position = PriceDateAnalizator.getPosition(price, newPrice);
+                    if (position == DatePosition.BEFORE) {
+                        isNeedToRemove = true;
                         finalPrices.add(newPrice);
-                    } else if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.AT_THE_BEGIN) {
+                    } else if (position == DatePosition.AT_THE_BEGIN) {
                         if (price.getValue() == newPrice.getValue()) {
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             newPrice.setDateEnd(price.getDateEnd());
                             finalPrices.add(newPrice);
                         } else {
                             price.setDateBegin(newPrice.getDateEnd().plusSeconds(1));
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             finalPrices.add(newPrice);
                         }
-                    } else if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.IN_THE_MIDDLE) {
+                    } else if (position == DatePosition.IN_THE_MIDDLE) {
                         if (price.getValue() == newPrice.getValue()) {
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             finalPrices.add(price);
                         } else {
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             Price priceAfterNewPrice = new Price(newPrice.getProductCode(), newPrice.getNumber(), newPrice.getDepart(),
                                     newPrice.getDateEnd().plusSeconds(1), price.getDateEnd(), price.getValue());
                             Price priceBeforeNewPrice = new Price(newPrice.getProductCode(), newPrice.getNumber(), newPrice.getDepart(),
@@ -60,28 +61,28 @@ public class PriceUpdater {
                             finalPrices.add(priceAfterNewPrice);
                             pricesToDelete.add(price);
                         }
-                    } else if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.IN_THE_END) {
+                    } else if (position == DatePosition.IN_THE_END) {
                         if (price.getValue() == newPrice.getValue()) {
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             price.setDateEnd(newPrice.getDateEnd());
                             finalPrices.add(price);
                         } else {
-                            isNeedToDelete = true;
+                            isNeedToRemove = true;
                             price.setDateEnd(newPrice.getDateBegin().minusSeconds(1));
                             finalPrices.add(price);
                             finalPrices.add(newPrice);
                         }
-                    } else if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.AFTER) {
-                        isNeedToDelete = true;
+                    } else if (position == DatePosition.AFTER) {
+                        isNeedToRemove = true;
                         finalPrices.add(newPrice);
-                    } else if (PriceDateAnalizator.getPosition(price, newPrice) == DatePosition.OVER) {
-                        isNeedToDelete = true;
+                    } else if (position == DatePosition.OVER) {
+                        isNeedToRemove = true;
                         finalPrices.add(newPrice);
                         pricesToDelete.add(price);
                     }
                 }
             }
-            if (isNeedToDelete) {
+            if (isNeedToRemove) {
                 newPriceIterator.remove();
             }
         }
