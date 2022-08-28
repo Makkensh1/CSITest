@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a584da49-5b7d-4a8c-a708-2710efa0bec9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadMe.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/PriceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exceptions/PriceFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/DatePosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/Price.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/service/PriceDateAnalizator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/service/PriceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/service/PriceFormatValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/service/PriceUpdater.java" afterDir="false" />
+    <list default="true" id="a584da49-5b7d-4a8c-a708-2710efa0bec9" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +42,13 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/Downloads/CSITest-master",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "0cbc6611f5540bd0809a388dc95a615b"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -201,8 +187,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661690368346</updated>
-      <workItem from="1661690370546" duration="14021000" />
+      <workItem from="1661690370546" duration="14309000" />
+      <workItem from="1661717818028" duration="320000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1661717102620</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661717102620</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,5 +213,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
